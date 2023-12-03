@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(210, 46%, 95%);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  min-height: 100vh;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "first first second third"
+      "four five five third";
+    gap: 20px;
+    position: relative;
+    max-width: 1400px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+
+    @media (max-width: 500px) {
+      display: block;
+      width: 300px;
+    }
+
+    .div-container {
+      border-radius: 10px;
+      box-shadow: 4px 4px 20px rgba(128, 128, 128, 0.658);
+      padding: 15px 35px;
+
+      position: relative;
+
+      @media (max-width: 500px) {
+        margin: 20px auto;
+      }
+
+      .top-div {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 15px;
+        margin: 0;
+
+        img {
+          border-radius: 50%;
+          width: 40px;
+        }
+
+        p {
+          opacity: 50%;
+        }
+      }
+
+      .bottom-div {
+        h2 {
+          margin: 20px 0;
+          position: relative;
+          line-height: 22px;
+          text-align: left;
+          letter-spacing: 1px;
+          z-index: 2;
+        }
+
+        p {
+          font-size: 0.9rem;
+          line-height: 25px;
+          margin-top: 10px;
+          text-align: left;
+          letter-spacing: 1px;
+
+          opacity: 70%;
+        }
+      }
+    }
+  }
+
+  .violet {
+    grid-area: first;
+    background: hsl(263, 55%, 52%);
+    color: hsla(0, 0%, 100%, 0.774);
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url('data:image/svg+xml,%3Csvg width="104" height="102" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M104 102V59.727H84.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C95.01 25.86 98.909 22.257 104 19.375V0c-9.758 4.27-17.712 9.874-23.864 16.813-6.151 6.939-10.712 14.545-13.681 22.818C63.485 47.904 62 59.941 62 75.74V102h42zm-62 0V59.727H22.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C33.01 25.86 36.909 22.257 42 19.375V0c-9.652 4.27-17.58 9.874-23.784 16.813C12.01 23.752 7.424 31.358 4.455 39.631 1.485 47.904 0 59.941 0 75.74V102h42z" fill="%23A775F1" fill-rule="nonzero" /%3E%3C/svg%3E');
+
+      position: absolute;
+      top: 0px;
+      right: 100px;
+      width: 104px;
+      height: 102px;
+
+      background-repeat: no-repeat;
+
+      @media (max-width: 500px) {
+        right: 5px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .grey {
+    grid-area: second;
+    background: hsl(217, 19%, 35%);
+    color: hsla(0, 0%, 100%, 0.774);
+  }
+
+  .white {
+    grid-area: third;
+    background: white;
+  }
+
+  .white2 {
+    grid-area: four;
+    background: white;
+  }
+
+  .dark-blue {
+    grid-area: five;
+    background: hsl(219, 29%, 14%);
+    color: hsla(0, 0%, 100%, 0.774);
+  }
+}
